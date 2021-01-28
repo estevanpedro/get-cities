@@ -13,4 +13,5 @@ async def cities(country, region):
             if row['country'] == country:
                 if row['subcountry'] == region:
                     list_of_cities.append(row['name'])
+        print(list_of_cities)
         return list_of_cities
