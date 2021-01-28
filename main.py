@@ -1,9 +1,7 @@
 from fastapi import FastAPI
-from iris.router import iris_classifier_router
 import csv
 
 app = FastAPI()
-app.include_router(iris_classifier_router.router, prefix='/iris')
 
 
 @app.get("/city/{country}/{region}")
