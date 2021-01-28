@@ -17,10 +17,10 @@ app.add_middleware(
 async def cities(country, region):
     with open('world.csv') as csvfile:
         reader = csv.DictReader(csvfile)
-        list_of_cities = ['Other city']
+        list_of_cities = []
         for row in reader:
             if row['country'] == country:
                 if row['subcountry'] == region:
                     list_of_cities.append(row['name'])
-        print(list_of_cities)
+        list_of_cities.append('Other')
         return list_of_cities
